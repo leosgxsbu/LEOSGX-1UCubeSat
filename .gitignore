@@ -1,0 +1,12 @@
+# Dependencies / build
+docs/node_modules/
+docs/.next/
+docs/out/
+docs/.env*
+*.log
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
