@@ -27,7 +27,7 @@
   ┃              🛰️ ───▶                                          🏁┃
   ┃   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░┃
   ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-       PHASE: DESIGN & PROTOTYPING          ~91 DAYS REMAINING
+       PHASE: DESIGN & PROTOTYPING          ~85 DAYS REMAINING
 ```
 
 **🌐 Project website:** [leosgxsbu.github.io/LEOSGX-1UCubeSat](https://leosgxsbu.github.io/LEOSGX-1UCubeSat/)
