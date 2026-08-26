@@ -22,12 +22,12 @@
 
 ```
   LAUNCH WINDOW                                                    DEADLINE
-  AUG 25 ──────────────────────────────────────────────── NOV 19, 2026
+  AUG 26 ──────────────────────────────────────────────── NOV 19, 2026
   ┃██████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░┃
   ┃              🛰️ ───▶                                          🏁┃
   ┃   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░┃
   ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-       PHASE: DESIGN & PROTOTYPING          ~85 DAYS REMAINING
+       PHASE: DESIGN & PROTOTYPING          ~84 DAYS REMAINING
 ```
 
 **🌐 Project website:** [leosgxsbu.github.io/LEOSGX-1UCubeSat](https://leosgxsbu.github.io/LEOSGX-1UCubeSat/)
