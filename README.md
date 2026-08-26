@@ -1,5 +1,4 @@
 <div align="center">
-
 # 🛰️ 1U-CubeSat — SYSTEM-3
 
 ### Stony Brook University 
