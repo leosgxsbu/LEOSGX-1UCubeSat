@@ -83,10 +83,10 @@ LEOSGX-1UCubeSat/
 
 | Parameter | Value |
 |-----------|-------|
-| **Channel Frequency** | 437.025 MHz UHF Amateur Space Band |
-| **Protocol** | Half-Duplex AX.25 (9600 Baud / GFSK) |
-| **Ground Network** | SatNOGS Global Receiver Nodes |
-| **Security** | 0% Encryption — Public Science Telemetry |
+| **Channel Frequency** | 435.00 - 438.00 MHz UHF Frequency Channel (Pending) |
+| **Communication Protocol** | Half-Duplex AX.25 (9600 Baud / GFSK -- Gaussian) |
+| **Ground Network** | SatNOGS Platform --  |
+| **Security** | Uplinks Encrypted, Downlinks OpenSourced -- Streame on SatNOGS |
 
 ---
 
