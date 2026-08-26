@@ -2,7 +2,7 @@
 
 # 🛰️ 1U-CubeSat — SYSTEM-3
 
-### Stony Brook University Nanosatellite Division
+### Stony Brook University 
 
 **Open-Source Gamma-Ray Spectrometer CubeSat &nbsp;|&nbsp; LEO Mission**
 
@@ -38,7 +38,7 @@
 
 ## 📡 Mission Overview
 
-**SYSTEM-3** is a 1U CubeSat being developed by the Stony Brook University Nanosatellite Division. The primary mission objective is to deploy a miniaturized gamma-ray spectrometer into Low Earth Orbit (LEO) to measure background cosmic radiation and map gamma-ray burst events in real-time.
+**SYSTEM-3** is a 1U CubeSat being developed by the Stony Brook University. The primary mission objective is to deploy a miniaturized gamma-ray spectrometer into Low Earth Orbit (LEO) to measure background cosmic radiation and map gamma-ray burst events in real-time.
 
 The satellite uses a **CsI(Tl) scintillator crystal** coupled with a **Hamamatsu SiPM array** to detect incoming gamma photons. The analog signal chain feeds into a custom pico-spectrometer board, processed by an **STM32F411** flight computer, and downlinked via a **437.025 MHz UHF** amateur radio link using the AX.25 protocol.
 
@@ -134,7 +134,7 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 <div align="center">
 
-**STONY BROOK UNIVERSITY NANOSATELLITE DIVISION // SYSTEM-3**
+**STONY BROOK UNIVERSITY  //**
 
 *Mission Code: LEO-GRM &nbsp;|&nbsp; Gamma-Ray Spectrometer CubeSat*
 
