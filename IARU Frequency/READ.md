@@ -36,7 +36,7 @@ This completed form is intended to be sent to the IARU Satellite Advisor (`satco
 - [IARU Member Societies](http://www.iaru.org/iaru-soc.html)
 - [AMSAT — Satellite Status](https://www.amsat.org/status/)
 - [SatNOGS Network](https://satnogs.org/)
-- Project repository: https://leosgxsbu.github.io/LEOSGX1UCubeSat/
+- Project repository: https://leosgxsbu.github.io/Psi_Sat-1U-CubeSat-/
 
 ## Status
 

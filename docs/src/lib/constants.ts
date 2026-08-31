@@ -1,9 +1,27 @@
-/** Shared mission & repository constants for SYSTEM-3 / LEO-GRM */
+/** Shared mission & repository constants for Psi Sat / LEO-GRM */
+
+import {
+  GITHUB_BASE,
+  GITHUB_OWNER,
+  GITHUB_REPO,
+  PAGES_BASE_PATH,
+  PROJECT_NAME,
+  PROJECT_SUBTITLE,
+} from "../../site.config";
+
+export {
+  GITHUB_BASE,
+  GITHUB_OWNER,
+  GITHUB_REPO,
+  PAGES_BASE_PATH,
+  PROJECT_NAME,
+  PROJECT_SUBTITLE,
+};
 
 export const MISSION = {
-  codename: "SYSTEM-3",
+  codename: PROJECT_NAME,
   callsign: "LEO-GRM",
-  fullName: "1U Gamma-Ray Spectrometer CubeSat",
+  fullName: "Psi Sat 1U Gamma-Ray Spectrometer CubeSat",
   org: "Stony Brook University Nanosatellite Division",
   department: "Stony Brook University Department of Physics and Astronomy",
   addressLines: [
@@ -27,9 +45,6 @@ export const TIMELINE = {
   totalDays: 92,
 } as const;
 
-export const GITHUB_OWNER = "leosgxsbu";
-export const GITHUB_REPO = "LEOSGX-1UCubeSat";
-export const GITHUB_BASE = `https://github.com/${GITHUB_OWNER}/${GITHUB_REPO}`;
 export const GITHUB_TREE = `${GITHUB_BASE}/tree/main`;
 
 export const NAV_LINKS = [
@@ -74,8 +89,8 @@ export const REPO_FOLDERS: RepoFolder[] = [
     slug: "compliance",
     title: "Compliance Documents",
     summary: "Mission proposals, IARU coordination materials, and FCC onboarding documents.",
-    paths: ["/Proposal/"],
-    hrefs: [`${GITHUB_TREE}/Proposal`],
+    paths: ["/Proposal/", "/IARU Frequency/"],
+    hrefs: [`${GITHUB_TREE}/Proposal`, `${GITHUB_TREE}/IARU%20Frequency`],
   },
   {
     slug: "physics",

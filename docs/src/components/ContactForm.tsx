@@ -12,9 +12,9 @@ export function ContactForm() {
 
   function onSubmit(e: FormEvent) {
     e.preventDefault();
-    const subject = encodeURIComponent(`[SYSTEM-3] Collaboration inquiry — ${name}`);
+    const subject = encodeURIComponent(`[${MISSION.codename}] Collaboration inquiry — ${name}`);
     const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nAffiliation: ${role}\n\n${note}\n\n— Sent from the SYSTEM-3 project website`,
+      `Name: ${name}\nEmail: ${email}\nAffiliation: ${role}\n\n${note}\n\n— Sent from the ${MISSION.codename} project website`,
     );
     window.location.href = `mailto:${MISSION.contactEmail}?subject=${subject}&body=${body}`;
     setSent(true);

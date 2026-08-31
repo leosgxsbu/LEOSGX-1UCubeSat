@@ -3,6 +3,7 @@ import { Space_Grotesk, Source_Sans_3 } from "next/font/google";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SpaceBackdrop } from "@/components/SpaceBackdrop";
+import { GITHUB_PAGES_URL, PROJECT_NAME } from "../../site.config";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -18,12 +19,13 @@ const sourceSans = Source_Sans_3({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(GITHUB_PAGES_URL),
   title: {
-    default: "SYSTEM-3 / LEO-GRM — Stony Brook Nanosatellite Division",
-    template: "%s · SYSTEM-3",
+    default: `${PROJECT_NAME} — Stony Brook Nanosatellite Division`,
+    template: `%s · ${PROJECT_NAME}`,
   },
   description:
-    "Official project site for SYSTEM-3, a 1U gamma-ray spectrometer CubeSat developed by the Stony Brook University Nanosatellite Division.",
+    `Official project site for ${PROJECT_NAME}, a 1U gamma-ray spectrometer CubeSat developed by the Stony Brook University Nanosatellite Division.`,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

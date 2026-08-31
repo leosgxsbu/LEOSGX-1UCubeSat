@@ -12,7 +12,7 @@ export default function GroundStationPage() {
     <>
       <PageHero
         title="Ground Station & Open Data"
-        subtitle="How operators can receive SYSTEM-3 UHF downlinks"
+        subtitle={`How operators can receive ${MISSION.codename} UHF downlinks`}
         crumbs={[
           { label: "Home", href: "/" },
           { label: "Ground Station" },
@@ -66,7 +66,7 @@ export default function GroundStationPage() {
 
           <h2 id="satnogs">SatNOGS integration</h2>
           <p>
-            SYSTEM-3 is designed so public science packets can enter the global
+            {MISSION.codename} is designed so public science packets can enter the global
             SatNOGS observation architecture. Ground station partners interested
             in contributing reception coverage are welcome to contact the team
             through the Collaborate page.
