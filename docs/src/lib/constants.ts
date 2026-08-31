@@ -1,18 +1,27 @@
-/** Shared mission & repository constants for SYSTEM-3 / LEO-GRM */
+/** Shared mission & repository constants for Psi Sat / LEO-GRM */
 
 import {
   GITHUB_BASE,
   GITHUB_OWNER,
   GITHUB_REPO,
   PAGES_BASE_PATH,
+  PROJECT_NAME,
+  PROJECT_SUBTITLE,
 } from "../../site.config";
 
-export { GITHUB_BASE, GITHUB_OWNER, GITHUB_REPO, PAGES_BASE_PATH };
+export {
+  GITHUB_BASE,
+  GITHUB_OWNER,
+  GITHUB_REPO,
+  PAGES_BASE_PATH,
+  PROJECT_NAME,
+  PROJECT_SUBTITLE,
+};
 
 export const MISSION = {
-  codename: "SYSTEM-3",
+  codename: PROJECT_NAME,
   callsign: "LEO-GRM",
-  fullName: "1U Gamma-Ray Spectrometer CubeSat",
+  fullName: "Psi Sat 1U Gamma-Ray Spectrometer CubeSat",
   org: "Stony Brook University Nanosatellite Division",
   department: "Stony Brook University Department of Physics and Astronomy",
   addressLines: [

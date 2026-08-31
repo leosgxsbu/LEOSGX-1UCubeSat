@@ -1,4 +1,4 @@
-# SYSTEM-3 / LEO-GRM — Project website
+# Psi Sat / LEO-GRM — Project website
 
 This folder is the Next.js site for [Psi_Sat-1U-CubeSat-](https://github.com/leosgxsbu/Psi_Sat-1U-CubeSat-).
 

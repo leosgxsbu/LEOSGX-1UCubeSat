@@ -1,6 +1,6 @@
 "use client";
 
-import { NAV_LINKS } from "@/lib/constants";
+import { MISSION, NAV_LINKS, PROJECT_NAME } from "@/lib/constants";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -26,7 +26,7 @@ export function SiteHeader() {
         <div>
           <Link href="/" className="no-underline hover:no-underline">
             <p className="font-display text-xl font-semibold tracking-tight text-white md:text-2xl">
-              SYSTEM-3 · LEO-GRM
+              {PROJECT_NAME} · {MISSION.callsign}
             </p>
             <p className="mt-1 text-sm text-white/70">
               Stony Brook University Nanosatellite Division

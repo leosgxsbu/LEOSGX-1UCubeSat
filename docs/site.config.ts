@@ -3,6 +3,10 @@
 export const GITHUB_OWNER = "leosgxsbu";
 export const GITHUB_REPO = "Psi_Sat-1U-CubeSat-";
 
+/** Public project name shown in the site header and page titles. */
+export const PROJECT_NAME = "Psi Sat";
+export const PROJECT_SUBTITLE = "1U CubeSat · LEO-GRM";
+
 /** GitHub Pages project-site path segment (matches repo name). */
 export const PAGES_BASE_PATH = `/${GITHUB_REPO}`;
 

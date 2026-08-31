@@ -13,7 +13,7 @@ export default function HomePage() {
   return (
     <>
       <PageHero
-        title="SYSTEM-3 Mission Overview"
+        title={`${MISSION.codename} Mission Overview`}
         subtitle={`${MISSION.fullName} · Open-source LEO science mission`}
         crumbs={[{ label: "Home" }, { label: "Mission Overview" }]}
       />
@@ -31,7 +31,7 @@ export default function HomePage() {
         <article className="prose-page">
           <h2 id="overview">Challenge overview</h2>
           <p>
-            <strong>SYSTEM-3</strong> is a 1U CubeSat developed by the{" "}
+            <strong>{MISSION.codename}</strong> is a 1U CubeSat developed by the{" "}
             {MISSION.org}. The mission will fly a miniaturized gamma-ray
             spectrometer in Low Earth Orbit to measure background cosmic
             radiation and support observation of gamma-ray burst events.

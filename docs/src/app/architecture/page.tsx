@@ -1,6 +1,6 @@
 import { ContentsBox } from "@/components/ContentsBox";
 import { PageHero } from "@/components/PageHero";
-import { PCB_STAGES } from "@/lib/constants";
+import { MISSION, PCB_STAGES } from "@/lib/constants";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,7 +12,7 @@ export default function ArchitecturePage() {
     <>
       <PageHero
         title="Six-Layer PCB Architecture"
-        subtitle="Hardware stages in the SYSTEM-3 flight stack"
+        subtitle={`Hardware stages in the ${MISSION.codename} flight stack`}
         crumbs={[
           { label: "Home", href: "/" },
           { label: "Architecture" },
@@ -29,7 +29,7 @@ export default function ArchitecturePage() {
 
         <article className="prose-page">
           <p>
-            SYSTEM-3 uses a vertical six-board stack. Each stage occupies a 95 ×
+            {MISSION.codename} uses a vertical six-board stack. Each stage occupies a 95 ×
             95 mm deck and supports a distinct subsystem from science payload
             through antenna deployment.
           </p>
