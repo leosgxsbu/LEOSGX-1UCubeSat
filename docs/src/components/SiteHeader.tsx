@@ -1,6 +1,6 @@
 "use client";
 
-import { MISSION, NAV_LINKS, PROJECT_NAME } from "@/lib/constants";
+import { MISSION, NAV_LINKS, PROJECT_NAME, PROJECT_SUBTITLE } from "@/lib/constants";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -26,10 +26,11 @@ export function SiteHeader() {
         <div>
           <Link href="/" className="no-underline hover:no-underline">
             <p className="font-display text-xl font-semibold tracking-tight text-white md:text-2xl">
-              {PROJECT_NAME} · {MISSION.callsign}
+              {PROJECT_NAME}
             </p>
+            <p className="mt-1 text-sm text-white/70">{PROJECT_SUBTITLE}</p>
             <p className="mt-1 text-sm text-white/70">
-              Stony Brook University Nanosatellite Division
+              {MISSION.org}
             </p>
           </Link>
         </div>

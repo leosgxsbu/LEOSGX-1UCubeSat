@@ -1,142 +1,159 @@
-<div align="center">
-# 🛰️ 1U-CubeSat — SYSTEM-3
+# LEO-GRM — 1U Cosmic Gamma-Ray Burst Nanosatellite Observatory
 
-### Stony Brook University 
+**Low-Earth Orbit Gamma-Ray Mapping (LEO-GRM)** · Stony Brook University
 
-**Open-Source Gamma-Ray Spectrometer CubeSat &nbsp;|&nbsp; LEO Mission**
+Jackson Boyle, Christian Tumanda, Muhammad Maalik · Project proposal draft (July 31, 2026)
 
-[![Mission Status](https://img.shields.io/badge/MISSION-IN%20DEVELOPMENT-orange?style=for-the-badge&logo=satellite&logoColor=white)](#)
-[![License](https://img.shields.io/badge/LICENSE-MIT-green?style=for-the-badge)](#)
-[![Deadline](https://img.shields.io/badge/DEADLINE-NOV%2019%202026-red?style=for-the-badge)](#)
-[![Website](https://img.shields.io/badge/WEBSITE-LIVE-blue?style=for-the-badge)](https://leosgxsbu.github.io/Psi_Sat-1U-CubeSat-/)
+[![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
+[![Website](https://img.shields.io/badge/website-GitHub_Pages-blue?style=flat-square)](https://leosgxsbu.github.io/Psi_Sat-1U-CubeSat-/)
+[![Status](https://img.shields.io/badge/status-pre--flight_design-orange?style=flat-square)](#regulatory-pipeline)
 
----
+<!-- deadline:begin -->
+**NASA CSLI proposal deadline:** November 19, 2026 · **81 days until NASA CSLI proposal deadline** · development window ~13% elapsed
 
-### 🚀 MISSION PROGRESS — DEADLINE: NOVEMBER 19, 2026
+[![CSLI deadline](https://img.shields.io/badge/81_DAYS_LEFT-November%2019%2C%202026/blue?style=for-the-badge)](https://www.nasa.gov/directorates/stmd/launch-services/cubesat-launch-initiative/)
+<!-- deadline:end -->
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=16&duration=3000&pause=1000&color=FF9900&center=true&vCenter=true&width=600&lines=%F0%9F%9B%B0%EF%B8%8F+SYSTEM-3+IN+DEVELOPMENT...;PAYLOAD+%E2%94%82+CsI(Tl)+Scintillator+%2B+SiPM+Array;COMMS+%E2%94%82+437.025+MHz+UHF+%7C+AX.25+%7C+9600+Baud;OBC+%E2%94%82+STM32F411+Flight+Computer;EPS+%E2%94%82+BQ25713+MPPT+Solar+Charger;TARGET+%E2%94%82+Low+Earth+Orbit+Deployment">
-  <img alt="Typing SVG" src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=16&duration=3000&pause=1000&color=FF9900&center=true&vCenter=true&width=600&lines=%F0%9F%9B%B0%EF%B8%8F+SYSTEM-3+IN+DEVELOPMENT...;PAYLOAD+%E2%94%82+CsI(Tl)+Scintillator+%2B+SiPM+Array;COMMS+%E2%94%82+437.025+MHz+UHF+%7C+AX.25+%7C+9600+Baud;OBC+%E2%94%82+STM32F411+Flight+Computer;EPS+%E2%94%82+BQ25713+MPPT+Solar+Charger;TARGET+%E2%94%82+Low+Earth+Orbit+Deployment" />
-</picture>
-
-```
-  LAUNCH WINDOW                                                    DEADLINE
-  AUG 26 ──────────────────────────────────────────────── NOV 19, 2026
-  ┃██████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░┃
-  ┃              🛰️ ───▶                                          🏁┃
-  ┃   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░┃
-  ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-       PHASE: DESIGN & PROTOTYPING          ~84 DAYS REMAINING
-```
-
-**🌐 Project website:** [leosgxsbu.github.io/Psi_Sat-1U-CubeSat-](https://leosgxsbu.github.io/Psi_Sat-1U-CubeSat-/)
+**Website:** https://leosgxsbu.github.io/Psi_Sat-1U-CubeSat-/
 
 ---
 
-</div>
+## Overview
 
-## 📡 Mission Overview
+LEO-GRM is a student-led 1U CubeSat project to build a compact observatory for soft gamma rays and hard X-rays in low Earth orbit. The payload uses a **50 × 50 × 3 mm CsI(Tl)** scintillator read out by a **Hamamatsu S13360-6050PE SiPM array**, with pulse timing logged on an **STM32F411RET6** flight computer. Science telemetry is intended for public release through **SatNOGS**.
 
-**SYSTEM-3** is a 1U CubeSat being developed by the Stony Brook University. The primary mission objective is to deploy a miniaturized gamma-ray spectrometer into Low Earth Orbit (LEO) to measure background cosmic radiation and map gamma-ray burst events in real-time.
-
-The satellite uses a **CsI(Tl) scintillator crystal** coupled with a **Hamamatsu SiPM array** to detect incoming gamma photons. The analog signal chain feeds into a custom pico-spectrometer board, processed by an **STM32F411** flight computer, and downlinked via a **437.025 MHz UHF** amateur radio link using the AX.25 protocol.
-
-All telemetry is broadcast unencrypted as public science data, integrating with the global **SatNOGS** ground station network.
-
----
-
-## 🏗️ 6-Layer PCB Stack Architecture
-
-| Layer | Dimensions | Subsystem |
-|-------|-----------|-----------|
-| **STAGE 1** | 95.0 × 95.0 mm | CsI(Tl) Scintillator Crystal Sheet (50×50×3mm) & Hamamatsu SiPM Array (C3015822) |
-| **STAGE 2** | 95.0 × 95.0 mm | Analog Front-End Pico Spectrometer (LTC6227 Low-Noise Op-Amp / Noise Filtering) |
-| **STAGE 3** | 95.0 × 95.0 mm | C&DH Flight Core (STM32F411RET6 / EXTI10 Hardware Interrupt Mode) |
-| **STAGE 4** | 95.0 × 95.0 mm | EPS Solar Power Manager (TI BQ25713 Buck-Boost I2C MPPT Charger) |
-| **STAGE 5** | 95.0 × 95.0 mm | Ballast Floor (Dual 18650 LiFePO4 2S1P & RFM95W UHF Transceiver) |
-| **STAGE 6** | 95.0 × 95.0 mm | Antenna Deployment Deck (Tape-Measure Dipole & 10Ω 1W Actuator) |
-
----
-
-## 📂 Repository Structure
-
-```
-Psi_Sat-1U-CubeSat-/
-├── CAD/                 # 3D models — Fusion 360 STEP assemblies, STL prints
-├── EasyEDA Pro/         # PCB schematics & layout source files
-├── Gerber Files/        # Manufacturing-ready Gerber & drill files
-├── Proposal/            # Mission proposals, IARU applications, FCC forms
-├── Research/            # Literature reviews, trade studies, references
-├── Physics/             # Orbital mechanics, radiation models, link budgets
-├── Code/                # Flight firmware, ground station scripts
-├── Materials/           # BOM, vendor datasheets, procurement logs
-├── docs/                # Next.js project website (GitHub Pages source)
-├── .github/workflows/   # GitHub Pages deploy action
-├── LICENSE              # MIT License
-└── README.md            # ← You are here
-```
-
----
-
-## 📻 RF Downlink Specifications
+Primary engineering envelope:
 
 | Parameter | Value |
 |-----------|-------|
-| **Channel Frequency** | 437.025 MHz UHF Amateur Space Band |
-| **Protocol** | Half-Duplex AX.25 (9600 Baud / GFSK) |
-| **Ground Network** | SatNOGS Global Receiver Nodes |
-| **Security** | 0% Encryption — Public Science Telemetry |
+| Form factor | 1U CubeSat |
+| External envelope | 100.0 × 100.0 × 113.5 mm |
+| Mass limit (CSLI) | 1.33 kg |
+| Chassis material | Aluminum 6061-T6 |
+| Nominal orbit | LEO, ~420 km altitude |
+| Attitude | Passive magnetic attitude control (PMAC) |
+
+The scintillator faces away from Earth using a permanent magnet aligned with the geomagnetic field, with mu-metal hysteresis rods for damping.
 
 ---
 
-## 🛠️ Getting Started
+## Detection performance (proposal targets)
 
-```bash
-# Clone the repository
-git clone https://github.com/leosgxsbu/Psi_Sat-1U-CubeSat-.git
-cd Psi_Sat-1U-CubeSat-
+| Item | Value |
+|------|-------|
+| Energy band | 30 keV – 300 keV (soft gamma / hard X-ray) |
+| Crystal thickness | 3 mm CsI(Tl) |
+| Beer–Lambert absorption (100 keV, μ = 6.21 cm⁻¹) | α ≈ 84.5% |
+| Photons per keV (crystal yield) | ~54 photons/keV (~550 nm) |
+| Energy conversion efficiency (green photons) | η ≈ 12.15% |
+| Fluence detection threshold | 10⁻⁶ erg/cm² (event duration) |
+| Software trigger | 5σ over rolling background: `Trigger = Mean + 5σ` |
+| Projected detections | ~10–20 soft GRBs/year in LEO |
 
-# Browse the hardware designs
-ls CAD/
-ls "Gerber Files/"
+**Beer–Lambert absorption:**
 
-# Run the project website locally
-cd docs
-npm install
-npm run dev
+```
+α = 1 - I/I₀ = 1 - e^(-μx)
+α = 1 - e^(-6.21 cm⁻¹ × 0.3 cm) ≈ 84.5%
+```
 
-# Flash firmware (STM32)
-cd ../Code/
-# Use STM32CubeIDE or PlatformIO to build & upload
+**Energy efficiency (green photons):**
+
+```
+η = (54 photons/keV) × [(6.63×10⁻³⁴ J·s)(3×10⁸ m/s) / ((550×10⁻⁹ m)(1.6×10⁻¹⁶ J/keV)] ≈ 12.15%
+```
+
+Burst duration is inferred from pulse timing on Stage 2 → EXTI10 interrupts on Stage 3 (short bursts ~1–5 s; longer events up to ~40–60 s in proposal examples).
+
+---
+
+## Six-stage PCB stack (95.0 × 95.0 mm decks)
+
+| Stage | Subsystem | Key hardware |
+|-------|-----------|--------------|
+| **1** | Science payload deck | 50×50×3 mm CsI(Tl), ESR wrap, Hamamatsu S13360-6050PE SiPM (JLC C42451657), PMAC magnet + mu-metal rods |
+| **2** | Front-end digitization | Pico gamma spectrometer: LTC6227HMS8 (LCSC C2924151), C-L-C π-filter on +53 V bias, 2–10 mV → 3.3 V logic pulse |
+| **3** | C&DH flight computer | STM32F411RET6 @ 100 MHz (LCSC C61314), EXTI10 on PA10, 1 µs timestamps, 45 min post-deploy silence |
+| **4** | EPS power manager | TI BQ25713 MPPT, GaAs cells on exterior PCBs, +3.3 V / +5.0 V rails |
+| **5** | Battery & UHF ballast | 2×18650 LiFePO₄ 2S1P (6.4 V nom), Keystone 1042 clips, Adafruit RFM95W (433 MHz, AX.25 @ 9600 baud GFSK) |
+| **6** | Antenna deployment | 16.3 cm tape-measure dipole (437 MHz), 10 Ω / 1 W burn resistor (LCSC C26074), IRLML2502 MOSFET release |
+
+Inter-board bus: dual 40-pin 2.54 mm stacking headers on left and right edges. Stage 1 analog uses a shielded 3-pin jumper off the main bus.
+
+**Current build status (Aug 11, 2026 proposal):** integrated mechanical stack of Stages 3–6; Stages 1–2 payload front-end pending integration.
+
+---
+
+## Communications
+
+| Parameter | Value |
+|-----------|-------|
+| IARU coordination band (requested) | 435 – 438 MHz |
+| Transceiver | Adafruit RFM95W (433 MHz module) |
+| Antenna | Deployable 16.3 cm quarter-wave dipole (~437 MHz target) |
+| Modulation / framing | GFSK, 9600 baud, AX.25 UI frames |
+| Downlink | Open science telemetry (SatNOGS) |
+| Uplink | Encrypted telecommand (rolling-code signature per proposal) |
+
+---
+
+## Regulatory pipeline
+
+| Step | Document / action | Notes |
+|------|-------------------|-------|
+| IARU | Amateur satellite frequency coordination | 435–438 MHz; faculty advisor signature; ~6–12 month lead time |
+| NASA CSLI | Technical flight proposal | Submit by **November 2026**; selection around March; ~1–2 years to build if selected |
+| FCC | Part 5 experimental license (Form 442 via CORES) | Faculty trustee submission |
+| Debris | NASA DAS → ODAR | Demonstrate atmospheric burn-up within 5 years of decommission |
+
+Launch safety items from the proposal: **45-minute** mandatory post-deploy RF silence, deployment kill switches on rails, Al 6061-T6 structure.
+
+---
+
+## Repository layout
+
+```
+Psi_Sat-1U-CubeSat-/
+├── CAD/                 # Fusion 360 assemblies, mechanical envelope
+├── EasyEDA Pro/         # PCB schematics and layouts (Stages 1–6)
+├── Gerber Files/        # Manufacturing outputs
+├── Proposal/            # Mission proposals and reports
+├── IARU Frequency/      # IARU coordination request
+├── Research/            # References and trade studies
+├── Physics/             # Detection models, link budgets
+├── Code/                # STM32 firmware (C++)
+├── Materials/           # BOM and procurement
+├── docs/                # Project website (Next.js → GitHub Pages)
+└── .github/workflows/   # Pages deploy + README deadline refresh
 ```
 
 ---
 
-## 🤝 Contributing
+## Run locally
 
-This is an open-source satellite project. Contributions are welcome across all subsystems — hardware design, firmware, ground station software, documentation, and testing.
+```bash
+git clone https://github.com/leosgxsbu/Psi_Sat-1U-CubeSat-.git
+cd Psi_Sat-1U-CubeSat-
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/your-feature`)
-3. Commit your changes
-4. Open a Pull Request
+cd docs && npm install && npm run dev
+```
+
+Open http://localhost:3000
+
+---
+
+## Contributing
+
+Open issues or pull requests for hardware, firmware, documentation, or ground-station support.
 
 **Contact:** [muhammad.maalik@stonybrook.edu](mailto:muhammad.maalik@stonybrook.edu)
 
 ---
 
-## 📄 License
+## License
 
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+MIT License — see [LICENSE](LICENSE).
 
 ---
 
-<div align="center">
-
-**STONY BROOK UNIVERSITY  //**
-
-*Mission Code: LEO-GRM &nbsp;|&nbsp; Gamma-Ray Spectrometer CubeSat*
-
-Department of Physics and Astronomy · Stony Brook University · Stony Brook, NY 11794-3800
-
-</div>
+Stony Brook University · Department of Physics and Astronomy · Stony Brook, NY 11794-3800
