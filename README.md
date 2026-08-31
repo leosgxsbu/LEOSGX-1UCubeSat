@@ -8,7 +8,7 @@
 [![Mission Status](https://img.shields.io/badge/MISSION-IN%20DEVELOPMENT-orange?style=for-the-badge&logo=satellite&logoColor=white)](#)
 [![License](https://img.shields.io/badge/LICENSE-MIT-green?style=for-the-badge)](#)
 [![Deadline](https://img.shields.io/badge/DEADLINE-NOV%2019%202026-red?style=for-the-badge)](#)
-[![Website](https://img.shields.io/badge/WEBSITE-LIVE-blue?style=for-the-badge)](https://leosgxsbu.github.io/LEOSGX-1UCubeSat/)
+[![Website](https://img.shields.io/badge/WEBSITE-LIVE-blue?style=for-the-badge)](https://leosgxsbu.github.io/Psi_Sat-1U-CubeSat-/)
 
 ---
 
@@ -29,7 +29,7 @@
        PHASE: DESIGN & PROTOTYPING          ~84 DAYS REMAINING
 ```
 
-**🌐 Project website:** [leosgxsbu.github.io/LEOSGX-1UCubeSat](https://leosgxsbu.github.io/LEOSGX-1UCubeSat/)
+**🌐 Project website:** [leosgxsbu.github.io/Psi_Sat-1U-CubeSat-](https://leosgxsbu.github.io/Psi_Sat-1U-CubeSat-/)
 
 ---
 
@@ -61,7 +61,7 @@ All telemetry is broadcast unencrypted as public science data, integrating with 
 ## 📂 Repository Structure
 
 ```
-LEOSGX-1UCubeSat/
+Psi_Sat-1U-CubeSat-/
 ├── CAD/                 # 3D models — Fusion 360 STEP assemblies, STL prints
 ├── EasyEDA Pro/         # PCB schematics & layout source files
 ├── Gerber Files/        # Manufacturing-ready Gerber & drill files
@@ -93,8 +93,8 @@ LEOSGX-1UCubeSat/
 
 ```bash
 # Clone the repository
-git clone https://github.com/leosgxsbu/LEOSGX-1UCubeSat.git
-cd LEOSGX-1UCubeSat
+git clone https://github.com/leosgxsbu/Psi_Sat-1U-CubeSat-.git
+cd Psi_Sat-1U-CubeSat-
 
 # Browse the hardware designs
 ls CAD/

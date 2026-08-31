@@ -9,7 +9,8 @@ export const SPACE_BACKGROUNDS = [
 /** Stable pick from the 3 backgrounds based on a page key (path). */
 export function backgroundForPath(pathname: string): string {
   // Strip basePath if present so hashing stays stable
-  const stripped = pathname.replace(/^\/LEOSGX-1UCubeSat/, "") || "/";
+  const base = BASE.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const stripped = (base ? pathname.replace(new RegExp(`^${base}`), "") : pathname) || "/";
   const key = stripped.replace(/\/+$/, "") || "/";
   let hash = 0;
   for (let i = 0; i < key.length; i++) {

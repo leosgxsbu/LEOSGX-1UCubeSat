@@ -1,5 +1,14 @@
 /** Shared mission & repository constants for SYSTEM-3 / LEO-GRM */
 
+import {
+  GITHUB_BASE,
+  GITHUB_OWNER,
+  GITHUB_REPO,
+  PAGES_BASE_PATH,
+} from "../../site.config";
+
+export { GITHUB_BASE, GITHUB_OWNER, GITHUB_REPO, PAGES_BASE_PATH };
+
 export const MISSION = {
   codename: "SYSTEM-3",
   callsign: "LEO-GRM",
@@ -27,9 +36,6 @@ export const TIMELINE = {
   totalDays: 92,
 } as const;
 
-export const GITHUB_OWNER = "leosgxsbu";
-export const GITHUB_REPO = "LEOSGX-1UCubeSat";
-export const GITHUB_BASE = `https://github.com/${GITHUB_OWNER}/${GITHUB_REPO}`;
 export const GITHUB_TREE = `${GITHUB_BASE}/tree/main`;
 
 export const NAV_LINKS = [
@@ -74,8 +80,8 @@ export const REPO_FOLDERS: RepoFolder[] = [
     slug: "compliance",
     title: "Compliance Documents",
     summary: "Mission proposals, IARU coordination materials, and FCC onboarding documents.",
-    paths: ["/Proposal/"],
-    hrefs: [`${GITHUB_TREE}/Proposal`],
+    paths: ["/Proposal/", "/IARU Frequency/"],
+    hrefs: [`${GITHUB_TREE}/Proposal`, `${GITHUB_TREE}/IARU%20Frequency`],
   },
   {
     slug: "physics",
