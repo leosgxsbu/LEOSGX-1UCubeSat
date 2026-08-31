@@ -12,7 +12,7 @@ export default function ArchitecturePage() {
     <>
       <PageHero
         title="Six-Layer PCB Architecture"
-        subtitle={`Hardware stages in the ${MISSION.codename} flight stack`}
+        subtitle={`${MISSION.codename} internal stack — 95.0 × 95.0 mm decks`}
         crumbs={[
           { label: "Home", href: "/" },
           { label: "Architecture" },
@@ -29,9 +29,15 @@ export default function ArchitecturePage() {
 
         <article className="prose-page">
           <p>
-            {MISSION.codename} uses a vertical six-board stack. Each stage occupies a 95 ×
-            95 mm deck and supports a distinct subsystem from science payload
-            through antenna deployment.
+            The {MISSION.codename} bus uses PCBs as load-bearing tiers inside a{" "}
+            {MISSION.envelope} aluminum chassis. Decks are spaced on M3 stainless threaded
+            rods with dual 40-pin 2.54 mm stacking headers on the left and right edges for
+            power and signal distribution.
+          </p>
+          <p>
+            <strong>Build status (Aug 11, 2026 proposal):</strong> mechanical integration
+            of Stages 3–6 is in progress; Stages 1–2 payload front-end integration is
+            planned after power and deployment loops are verified.
           </p>
 
           <div className="not-prose mt-8 space-y-4">

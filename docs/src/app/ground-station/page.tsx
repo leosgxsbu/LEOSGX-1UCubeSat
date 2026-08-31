@@ -12,7 +12,7 @@ export default function GroundStationPage() {
     <>
       <PageHero
         title="Ground Station & Open Data"
-        subtitle={`How operators can receive ${MISSION.codename} UHF downlinks`}
+        subtitle={`Receiving ${MISSION.codename} UHF telemetry`}
         crumbs={[
           { label: "Home", href: "/" },
           { label: "Ground Station" },
@@ -24,7 +24,8 @@ export default function GroundStationPage() {
           items={[
             { id: "specs", label: "RF specifications" },
             { id: "receive", label: "How to receive" },
-            { id: "satnogs", label: "SatNOGS integration" },
+            { id: "satnogs", label: "SatNOGS" },
+            { id: "data", label: "Data format" },
           ]}
         />
 
@@ -34,11 +35,13 @@ export default function GroundStationPage() {
             <table className="w-full border-collapse border border-line bg-white text-left text-sm">
               <tbody>
                 {[
-                  ["Frequency", MISSION.frequency],
+                  ["IARU band (coordination)", MISSION.frequencyBand],
+                  ["Antenna target", MISSION.frequency],
+                  ["Transceiver module", MISSION.transceiver],
                   ["Modulation", MISSION.baud],
-                  ["Protocol", `${MISSION.protocol} half-duplex`],
-                  ["Encryption", "None — public science telemetry"],
-                  ["Band", "UHF amateur space band"],
+                  ["Framing", `${MISSION.protocol} UI frames`],
+                  ["Downlink", "Open science telemetry"],
+                  ["Uplink", "Encrypted telecommand (proposal)"],
                   ["Ground network", "SatNOGS"],
                 ].map(([k, v]) => (
                   <tr key={k} className="border-b border-line">
@@ -54,22 +57,30 @@ export default function GroundStationPage() {
 
           <h2 id="receive">How to receive</h2>
           <p>
-            Licensed amateur radio operators may decode the unencrypted downlink
-            with a software-defined radio. A typical workflow is:
+            After the mandatory <strong>45-minute post-deploy silence</strong>, licensed
+            operators can decode the downlink with an SDR:
           </p>
           <ol className="list-decimal space-y-1 pl-5 text-ink">
-            <li>Tune to {MISSION.frequency}</li>
+            <li>Tune to the coordinated UHF amateur satellite band (435–438 MHz requested)</li>
             <li>Demodulate GFSK at 9600 baud</li>
             <li>Decode AX.25 UI frames</li>
-            <li>Forward observations to SatNOGS where applicable</li>
+            <li>Upload observations to SatNOGS where applicable</li>
           </ol>
 
-          <h2 id="satnogs">SatNOGS integration</h2>
+          <h2 id="satnogs">SatNOGS</h2>
           <p>
-            {MISSION.codename} is designed so public science packets can enter the global
-            SatNOGS observation architecture. Ground station partners interested
-            in contributing reception coverage are welcome to contact the team
-            through the Collaborate page.
+            {MISSION.codename} is designed for open telemetry distribution. IARU
+            coordination is intended to align the downlink with the SatNOGS global
+            receiver network so students and researchers can access science packets without
+            proprietary decoders.
+          </p>
+
+          <h2 id="data">Data format</h2>
+          <p>
+            The flight computer logs microsecond-resolution pulse timestamps in lightweight
+            binary text files. These logs are intended for cross-reference with other
+            observatories (for example LIGO-Virgo-KAGRA gravitational-wave alerts) to
+            search for coincident gamma-ray events during multi-messenger studies.
           </p>
         </article>
       </div>

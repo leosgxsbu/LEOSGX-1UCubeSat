@@ -1,7 +1,7 @@
 import { ContentsBox } from "@/components/ContentsBox";
 import { DeadlineCard } from "@/components/DeadlineCard";
 import { PageHero } from "@/components/PageHero";
-import { MISSION } from "@/lib/constants";
+import { DETECTION_SPECS, MISSION } from "@/lib/constants";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -14,88 +14,93 @@ export default function HomePage() {
     <>
       <PageHero
         title={`${MISSION.codename} Mission Overview`}
-        subtitle={`${MISSION.fullName} · Open-source LEO science mission`}
+        subtitle={MISSION.fullName}
         crumbs={[{ label: "Home" }, { label: "Mission Overview" }]}
       />
 
       <div className="relative z-10 mx-auto max-w-5xl px-4 py-10 md:px-6 md:py-12">
         <ContentsBox
           items={[
-            { id: "overview", label: "Challenge overview" },
-            { id: "status", label: "Mission status" },
-            { id: "objectives", label: "Mission objectives" },
-            { id: "explore", label: "Explore the project" },
+            { id: "overview", label: "Overview" },
+            { id: "vehicle", label: "Vehicle envelope" },
+            { id: "detection", label: "Detection performance" },
+            { id: "status", label: "CSLI timeline" },
+            { id: "explore", label: "Project sections" },
           ]}
         />
 
         <article className="prose-page">
-          <h2 id="overview">Challenge overview</h2>
+          <h2 id="overview">Overview</h2>
           <p>
-            <strong>{MISSION.codename}</strong> is a 1U CubeSat developed by the{" "}
-            {MISSION.org}. The mission will fly a miniaturized gamma-ray
-            spectrometer in Low Earth Orbit to measure background cosmic
-            radiation and support observation of gamma-ray burst events.
+            <strong>{MISSION.codename}</strong> (Low-Earth Orbit Gamma-Ray Mapping) is a
+            Stony Brook University project to design a 1U CubeSat observatory for soft
+            gamma rays and hard X-rays. The payload couples a{" "}
+            <strong>50 × 50 × 3 mm CsI(Tl)</strong> scintillator to a{" "}
+            <strong>Hamamatsu S13360-6050PE SiPM</strong>, with pulse timing on an{" "}
+            <strong>STM32F411RET6</strong> flight computer. Open telemetry is intended for
+            public release through <strong>SatNOGS</strong>.
           </p>
           <p>
-            The detection chain uses a CsI(Tl) scintillator coupled to a
-            Hamamatsu SiPM array, processed by a custom analog front-end and an
-            STM32F411 flight computer. Science telemetry is downlinked on{" "}
-            {MISSION.frequency} using the {MISSION.protocol} protocol and is
-            intended for public reception through the SatNOGS network.
+            Authors (July 2026 proposal): {MISSION.authors.join(", ")}.
           </p>
 
-          <div className="my-8 not-prose grid gap-3 border border-line bg-paper-soft p-5 text-sm sm:grid-cols-2">
-            <p>
-              <strong>Mission:</strong> Gamma-ray spectrometry in LEO
-            </p>
-            <p>
-              <strong>Who:</strong> {MISSION.org}
-            </p>
-            <p>
-              <strong>Platform:</strong> 1U CubeSat ({MISSION.callsign})
-            </p>
-            <p>
-              <strong>Deadline:</strong> {MISSION.deadlineLabel} (NASA CSLI)
-            </p>
-            <p>
-              <strong>Status:</strong> {MISSION.status}
-            </p>
-            <p>
-              <strong>License:</strong> MIT (open hardware &amp; software)
-            </p>
+          <h2 id="vehicle">Vehicle envelope</h2>
+          <div className="my-8 not-prose overflow-x-auto">
+            <table className="w-full border-collapse border border-line bg-white text-left text-sm">
+              <tbody>
+                {[
+                  ["External envelope", MISSION.envelope],
+                  ["Mass limit (CSLI)", MISSION.massLimit],
+                  ["Chassis", MISSION.chassis],
+                  ["Nominal orbit", MISSION.orbit],
+                  ["Attitude", MISSION.propulsion],
+                  ["Organization", MISSION.org],
+                ].map(([k, v]) => (
+                  <tr key={k} className="border-b border-line">
+                    <th className="w-48 bg-paper-soft px-3 py-2.5 font-medium text-ink">
+                      {k}
+                    </th>
+                    <td className="px-3 py-2.5 text-muted">{v}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
 
-          <h2 id="status">Mission status</h2>
+          <h2 id="detection">Detection performance (proposal)</h2>
+          <div className="not-prose overflow-x-auto">
+            <table className="w-full border-collapse border border-line bg-white text-left text-sm">
+              <tbody>
+                {DETECTION_SPECS.map((row) => (
+                  <tr key={row.label} className="border-b border-line">
+                    <th className="w-56 bg-paper-soft px-3 py-2.5 font-medium text-ink">
+                      {row.label}
+                    </th>
+                    <td className="px-3 py-2.5 text-muted">{row.value}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
           <p>
-            The team is currently in the design and prototyping phase, working
-            toward the NASA CSLI submission cutoff on {MISSION.deadlineLabel}.
+            Background rejection uses a rolling <strong>5σ</strong> threshold:{" "}
+            <code>Trigger = Mean + 5σ</code>. Burst duration is inferred from pulse
+            timestamps on EXTI10 (short events ~1–5 s; longer events up to ~40–60 s in
+            proposal examples).
+          </p>
+
+          <h2 id="status">CSLI timeline</h2>
+          <p>
+            NASA CubeSat Launch Initiative (CSLI) technical proposal target:{" "}
+            <strong>{MISSION.deadlineLabel}</strong>. If selected (around March), the
+            team would have roughly 1–2 years to complete flight hardware. IARU frequency
+            coordination and FCC Part 5 licensing run in parallel with the CSLI process.
           </p>
           <div className="not-prose my-6 max-w-xl">
             <DeadlineCard />
           </div>
 
-          <h2 id="objectives">Mission objectives</h2>
-          <ul>
-            <li>
-              Deploy a compact CsI(Tl) + SiPM gamma-ray spectrometer in a 1U form
-              factor
-            </li>
-            <li>
-              Demonstrate reliable onboard processing with an STM32F411 flight
-              computer
-            </li>
-            <li>
-              Broadcast unencrypted public science telemetry on the UHF amateur
-              space band
-            </li>
-            <li>
-              Publish CAD, electronics, firmware, and documentation as an open
-              repository
-            </li>
-          </ul>
-
-          <h2 id="explore">Explore the project</h2>
-          <p>Use the sections below to open each project area on its own page.</p>
+          <h2 id="explore">Project sections</h2>
         </article>
 
         <div className="mt-6 grid gap-3 sm:grid-cols-2">
@@ -103,22 +108,22 @@ export default function HomePage() {
             {
               href: "/architecture",
               title: "Architecture",
-              body: "Six-layer PCB stack and hardware registry.",
+              body: "Six-stage 95 mm PCB stack and part list.",
             },
             {
               href: "/repository",
               title: "Repository",
-              body: "CAD, electrical, firmware, and research folders.",
+              body: "CAD, electrical design, firmware, and compliance folders.",
             },
             {
               href: "/ground-station",
               title: "Ground Station",
-              body: "RF downlink specs and SatNOGS reception notes.",
+              body: "UHF downlink parameters and SatNOGS reception.",
             },
             {
               href: "/collaborate",
               title: "Collaborate",
-              body: "Department location and contact form for partners.",
+              body: "Department contact and collaboration form.",
             },
           ].map((card) => (
             <Link

@@ -45,7 +45,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-line px-4 py-4 text-center text-xs text-muted">
-        {MISSION.org} · {MISSION.codename} / {MISSION.callsign}
+        {MISSION.org} · {MISSION.codename}
       </div>
     </footer>
   );
